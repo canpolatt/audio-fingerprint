@@ -86,7 +86,7 @@ if __name__ == '__main__':
             matches_found = len(x)
 
             if matches_found > 0:
-                msg = 'I found %d hash in db'
+                msg = 'Veritabaninda %d hash buldum'
                 print colored(msg, 'green') % (
                     matches_found
                 )
@@ -140,17 +140,17 @@ if __name__ == '__main__':
     total_matches_found = len(matches)
 
     if total_matches_found > 0:
-        msg = 'Totally found %d hash'
+        msg = 'Toplam bulunan hash %d'
         print colored(msg, 'green') % total_matches_found
 
         song = align_matches(matches)
 
-        msg = ' => song: %s (id=%d)\n'
-        msg += '    offset: %d (%d secs)\n'
+        msg = ' => Bulunan sarki: %s (id=%d)\n'
+        #msg += '    offset: %d (%d secs)\n'
 
         print colored(msg, 'green') % (
             song['SONG_NAME'], song['SONG_ID'],
-            song['OFFSET'], song['OFFSET_SECS']
+            #song['OFFSET'], song['OFFSET_SECS']
         )
     else:
         msg = 'Not anything matching'

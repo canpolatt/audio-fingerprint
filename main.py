@@ -19,7 +19,7 @@ if __name__ == '__main__':
             #song = db.get_song_by_filehash(audio['file_hash'])
             song_id = db.add_song(filename, audio['file_hash'])
 
-            print colored("Analyzing music: %s", "green") % filename
+            print colored("Parmak izi uretiliyor... Sarki: %s", "green") % filename
 
             # if song:
             #     hash_count = db.get_song_hashes_count(song_id)
@@ -37,10 +37,10 @@ if __name__ == '__main__':
                 channel_hashes = analyzer.fingerprint(channel, Fs=audio['Fs'])
                 channel_hashes = set(channel_hashes)
 
-                msg = 'Channel %d saved %d hashes'
-                print colored(msg, attrs=['dark']) % (
-                    channeln, len(channel_hashes)
-                )
+                #msg = 'Channel %d saved %d hashes'
+                #print colored(msg, attrs=['dark']) % (
+                #    channeln, len(channel_hashes)
+                #)
 
                 hashes |= channel_hashes
 
@@ -50,4 +50,4 @@ if __name__ == '__main__':
             print(type(values))
             db.store_fingerprints(values)
 
-    print colored('Done', "green")
+    print colored('Parmak izleri uretildi', "green")

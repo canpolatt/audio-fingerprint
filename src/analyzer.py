@@ -2,6 +2,7 @@ from __future__ import division
 import hashlib
 import numpy as np
 import matplotlib.mlab as mlab
+import matplotlib.pyplot as plt
 from termcolor import colored
 from scipy.ndimage.filters import maximum_filter
 from scipy.ndimage.morphology import (generate_binary_structure, iterate_structure, binary_erosion)
@@ -35,6 +36,13 @@ def fingerprint(channel_samples, Fs=DEFAULT_FS,
 
     arr2D = 10 * np.log10(replaceZeroes(arr2D))
     arr2D[arr2D == -np.inf] = 0
+    # fig, ax = plt.subplots()
+    # ax.imshow(arr2D)
+    # ax.set_xlabel('Time')
+    # ax.set_ylabel('Frequency')
+    # ax.set_title("Spectrogram")
+    # plt.gca().invert_yaxis()
+    # plt.show()
 
     local_maxima = get_2D_peaks(arr2D, amp_min=amp_min)
 
